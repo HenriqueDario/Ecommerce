@@ -1,0 +1,461 @@
+html{    
+    font-family: "Century Gothic",sans-serif;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+nav{
+    min-width: 60em;
+    min-height: 3em;
+    font-size: 120%;
+    color: blueviolet;
+    align-content: center;
+    border-bottom: 1.1em solid whitesmoke; 
+    padding-top: 0.4em;
+    padding-bottom: 1.2em;
+    
+}
+
+.logo{
+    width: 15ch;
+    height: 4em;
+    margin-left: 2%;
+    display: block;
+}
+
+.menuimg{
+    position: relative;
+    width: 4ch;
+    height: 3.5ch;
+    margin-right: 2%;    
+    padding-top: 1.7%;
+    bottom: 0.7ch;
+    float: right;
+}
+
+.menu-item{
+    display: inline;
+    padding-top: 1.9%;
+    padding-left: 3%;
+    margin-right: 5%;
+    float: right;
+}
+
+.menu{    
+    min-width: 90ch;
+    text-align: center;
+    height: 2.2%;
+}
+
+.menu-item a{
+    text-decoration: none;    
+    color: black;
+}
+
+.menu-item a:hover{
+    color: red;
+}
+
+footer{
+    text-align: center;
+    background-color: whitesmoke;
+    margin-top: auto;
+    width:100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.imagem-principal{
+    position: fixed;
+    background-image: url(../images/bola.jpg);       
+    background-size: cover;
+    background-attachment: fixed;
+    min-width: 100ch;
+    min-height: 2ch;
+    width: 100%;
+    height: 100%;
+    filter: opacity(30%);
+    z-index: -1;
+}
+
+.principal{
+    position: relative;
+}
+
+.texto-principal{
+    font-size: 200%;
+    margin-top: 10ch;
+    z-index: 1;
+}
+
+.titulo{
+	position:relative;
+    font-size: 200%;
+    margin-top: 2em;
+    color: black;
+    text-align: center;
+    height: 2.5em;
+    font-style: italic;        
+}
+
+.produto{
+    position: relative;
+    float: left;
+    width: 17em;
+    margin-left: 5.5%;    
+    margin-bottom: 2.5em !important;
+}
+
+.produto-image{
+    width: 100%;
+    height: 27ch;
+    background-size: cover;     
+}
+
+.containerProducts{
+	position:relative;
+	width: 99%;
+	
+}
+
+.produto-titulo{
+    text-align: center;
+    font-size: 190%;
+}
+
+.produto-preco{
+    text-align: center;
+    font-size: 120%;    
+}
+.produto-descricao{
+    text-align: center;
+    font-size: 80%;    
+}
+
+.logo-sac{    
+    float: right;
+    width: 15em;
+    height: 8.5em;
+    margin-right: 1%;
+}
+
+.label-contato{
+    margin-left: 0.2em;
+}
+.text-contato{
+    position: relative;
+    margin-top: 1.2%;
+    margin-left: 0.3em;
+}
+
+.btn-submit{
+    position: relative;
+    margin-top: 1.2%;
+    left: 19.38em;
+}
+
+.main-contato{
+    min-width: 50em;
+    min-height: 32em;
+}
+
+.formulario{
+    position: relative;
+    top: 2%;
+    left: 1ch;
+    min-height: 20em;
+    max-height: 20em;
+    min-width: 30em;
+    max-width: 30em;
+    z-index: 1;
+}
+
+
+.formularioLogin{
+    position: relative;
+    left: 40%;    
+    margin-top: 7%;
+    min-height: 20em;
+    max-height: 20em;
+    min-width: 30em;
+    max-width: 30em;
+    z-index: 1;
+}
+
+.text-login{
+    text-align: center;
+    position: relative;
+    border-radius: 10em;
+    margin-top: 1.2%;
+    height: 2.2em;
+    width: 18em;
+}
+
+.text-senha{
+    position: relative;
+    
+    text-align: center;
+    border-radius: 10em;
+    margin-top: 2.5%;
+    
+    height: 2.2em;
+    width: 18em;
+}
+
+.btn-login{
+    position: relative;
+    background-color: #80dcf2;
+    border-radius: 10em;
+    text-align: center;
+    width: 18em;
+    height: 2em;
+}
+
+.btn-cadastro{
+    position: relative;
+    background-color: rgb(255, 165, 0);
+    border-radius: 1em;
+    text-align: center;
+    width: 18em;
+    height: 2em;
+    
+   
+    margin: auto;
+
+    right: 0;
+    left: 0;
+    top: 2.5ch;
+    bottom: 0;
+}
+
+.txtNome{
+    position: relative;
+    width: 10.6em;
+    margin-left: 10px;
+    
+}
+.txtValor{
+    position: relative;
+    width: 10.6em;
+    margin: 10px;
+}
+.descricaoProduto{
+    position: relative;
+    width: 22.2em;
+    margin: 10px;
+}
+
+.fotoProduto{
+    width: 20em;
+    height: 20em;
+    background-color: black;
+    margin-left: 25%;
+    margin-bottom: 2%;
+    color: white;
+}
+
+.fotoProduto p{
+    position: relative;
+    top: 4.5em;
+    text-align: center;    
+    font-size: 2em;
+}
+
+
+.formCadastroProduto{    
+    position: relative;
+    width: 40em;
+    height: 42em;
+    min-height: 40em;
+    min-width: 40em;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.formularioCadastroCliente{    
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.btn-enviar{
+    position: relative;
+    width: 10em;
+    height: 2em;
+    background-color: aqua;
+    border-radius: 20em;
+    left: 15.5em;
+   
+}
+
+.campos{
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+.campos-cadastro{
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 1em;
+    text-align: justify;
+    display: initial;
+}
+
+.coluna{    
+    position: relative;
+    margin: 3px 1.2em;
+}
+
+#nome-cliente{
+    position: relative;
+    width: 17em;
+}
+
+#cpf{
+    position: relative;
+    width: 10em;
+    clear: both;
+    right: 2em;
+}
+#coluna-cpf{
+    position: relative;
+    width: 10em;
+    clear: both;
+    right: 1.5ch;
+}
+#txt-email{
+    position: relative;
+    width: 20em;
+    margin-left: 1.2em;
+}
+
+#senha-cliente{
+    position: relative;
+    width: 14em;
+    margin-left: 1.2em;
+}
+
+#confirmar-senha{
+    position: relative;
+    width: 14m;
+    margin-left: 1.2em;
+    clear: both;
+    right: 5em;
+}
+
+.label-confirmar-senha{
+    position: relative;
+    width: 12em;
+    margin-left: 1.2em;
+    right: 5em;
+}
+
+#btn-cadastrar{
+    position: relative;
+    width: 10em;
+    height: 2em;
+    background-color: #80dcf2;
+    border-radius: 1ch;
+    margin:1em;
+    margin-top: 3,5em;
+}
+
+
+th{
+    position: relative;
+    padding-top: 1.3em;
+}
+
+.pegar-imagem{
+    position: relative;   
+    margin-bottom: 3em;
+    margin-left: 9.4em;
+    bottom: 2ch;
+    
+}
+
+.tableAreaCliente{
+    position: relative;
+    width: 300px;
+    margin-top: 4em;
+    margin-left: 8.5em;
+    border: 3px solid rgb(211, 211, 211)
+}
+
+.tableAreaCliente td{    
+    text-decoration: none;    
+    position: relative;
+    padding-left: 1em;
+    font-size: 20px;
+}
+
+.tableAreaCliente a{    
+    text-decoration: none;    
+    position: relative;
+    color: rgb(100, 100, 100);
+    
+}
+.tableAreaCliente a:hover{   
+    position: relative;
+    color: red;
+    
+}
+
+.tituloTableAreaCliente{
+    position: relative !important;
+    font-size: 40px !important;
+    color: rgb(255, 165, 0);
+}
+
+
+.excluirConta{
+	position: relative !important;
+	margin: 3em auto 0 auto;
+}
+
+.excluirConta input{
+	position: relative !important;
+	width:23em;
+}
+.excluirConta label{
+	position: relative !important;
+	font-size: 17px;
+}
+.excluirConta #btn-enviar{
+	position: relative !important;
+	width:10em !important;
+	margin-left: 27.5%;
+	margin-top:3em;
+    background-color: #80dcf2;
+    border-radius: 10em;
+}
+
+
+/* tira as setas do type date e type number */
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+}
+
