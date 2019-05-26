@@ -178,7 +178,7 @@ public class ProductDAO implements IDAO{
 	public List<Product> listarProdutos() {
 		Connection conn = null;
 		try {
-			String sql = "SELECT * from tbProduto";
+			String sql = "SELECT * from tbProduto ORDER BY idProduto ASC";
 			conn = Conexao.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();

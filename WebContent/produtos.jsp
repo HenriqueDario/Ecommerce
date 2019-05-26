@@ -34,8 +34,6 @@
 	        		<div class="produto-preco">
 	        			R$: <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.priceProduct}"/> 
 	        			
-	        			
-	        			
 	        		</div>
 	        		<div class="produto-descricao">
 	        			${product.describeProduct}

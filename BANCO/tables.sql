@@ -22,5 +22,7 @@ drop table tbUsuario
 select * from tbUsuario
 select * from tbProduto
 
+insert into tbUsuario (nomeusuario,cpfusuario,emailusuario,senhausuario,nivelusuario)
+values ('adm','25530066985','adm','adm',1)
 	  
 	

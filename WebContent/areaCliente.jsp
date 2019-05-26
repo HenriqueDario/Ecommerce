@@ -18,13 +18,13 @@
         <table class="tableAreaCliente">
         	<tr>
                	<td class="tituloTableAreaCliente">
-                   	Area Cliente
+                   	Conta
                    	<br><br>
                 </td>
             </tr>
             <tr>
                 <td> 
-                	<a href="editarDados.jsp">Alterar dados cadastrados</a>
+                	<a href="editarDadosAtuais.jsp">Alterar dados cadastrados</a>
                     <br><br>
             	</td>
             </tr>           
@@ -36,14 +36,11 @@
             </tr>
             <tr>
                 <td> 
-                	<a href="excluirConta.jsp">Excluir conta</a>
+                	<a href="excluirContaAtual.jsp">Excluir conta</a>
                     <br><br>
             	</td>
             </tr>
 		</table>
-        <table class="tablePedidos">
-             
-        </table>
 
 
         <footer>

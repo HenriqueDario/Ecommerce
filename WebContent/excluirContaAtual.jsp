@@ -20,7 +20,7 @@
         	<label> Para excluir a conta digite: "ALOHA" (sem aspas)</label><br><br>        	
         	<input type="text" id="txtConfirma" name="txtConfirma"><br>
         	<input type="button" id="btn-enviar" name="btn-enviar" value="Enviar"  onclick="validar()">
-        	<input type="hidden" id="idUser" name="idUser" value="<% out.print(request.getParameter("idUser"));%>">
+        	<input type="hidden" id="idUser" name="idUser" value="${User.id}">
         </form>
 		
 		

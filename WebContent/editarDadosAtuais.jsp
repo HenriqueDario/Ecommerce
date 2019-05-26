@@ -16,16 +16,12 @@
     <body>
     	<img src="images/bg.jpg" class="imagem-principal"/>
         <%@ include file = "nav.jsp" %>
-        <% String id = request.getParameter("idUser");
-        	UserDAO uDao = new UserDAO();
-        	User u = uDao.findById(Integer.parseInt(id));
-        %>
-        
+       
         
         <h1 class="titulo"> Editar dados </h1>
  		<form action="editarUsuario" id="formCadastro" method="POST" enctype="multipart/form-data" class="formularioCadastroCliente">
-        	<input type="hidden" id="levelUser" name="levelUser" value="<%out.print(u.getLevelUser());%>"/>
-        	<input type="hidden" id="idUser" name="idUser" value="<% out.print(u.getId()); %>">
+        	<input type="hidden" id="levelUser" name="levelUser" value="${User.levelUser}"/>
+        	<input type="hidden" id="idUser" name="idUser" value="${User.id}">
             <table class="campos-cadastro">
             	<tr>
                 	<th>
@@ -40,8 +36,8 @@
               	 	</th>
                 </tr>
                 <tr>
-                 	<td><input type="text" id="nome-cliente" name="txtNome" class="coluna" value="<%out.print(u.getNameUser());%>"required></td>
-                    <td><input maxlength="14" type="text" id="cpf" name="txtCpf" class="coluna" value="<%out.print(u.getCpfUser()); %>" required onkeydown="fMasc(this, mCPF );" onblur="validarCPF(this)"></td>
+                 	<td><input type="text" id="nome-cliente" name="txtNome" class="coluna" value="${User.nameUser}"required></td>
+                    <td><input maxlength="14" type="text" id="cpf" name="txtCpf" class="coluna" value="${User.cpfUser}" required onkeydown="fMasc(this, mCPF );" onblur="validarCPF(this)"></td>
                 </tr>
                 <tr>
                  	<th>
@@ -52,7 +48,7 @@
                 </tr>
                 <tr>
                 	<td>
-                   		<input type="text" id="txt-email" name="txtEmail" value="<%out.print(u.getEmailUser()); %>" required>
+                   		<input type="text" id="txt-email" name="txtEmail" value="${User.emailUser}" required>
                 	</td>
                 </tr>
 				<tr>

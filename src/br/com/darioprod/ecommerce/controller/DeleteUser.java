@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.Session;
+
 
 import br.com.darioprod.ecommerce.dao.UserDAO;
 import br.com.darioprod.ecommerce.model.User;
@@ -19,17 +19,23 @@ public class DeleteUser extends HttpServlet {
        
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User user = (User) request.getAttribute("User");
+		int id = Integer.parseInt(request.getParameter("idUser"));
+		
 		UserDAO uDao = new UserDAO();
+		User user = uDao.findById(id);
 		
-		if(uDao.remover(user)) {
-			System.out.println("Excluiu");
-			request.getSession().invalidate();
-			request.getRequestDispatcher("index.jsp");
-		}else{
-			System.out.println("Deu ruim");
+		User atual = (User) request.getSession().getAttribute("User");
+		
+		try {
+			if(atual.getId() == id)
+				request.getSession().invalidate();
+			
+			if(uDao.remover(user))
+				response.sendRedirect("login.jsp");
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
-		
 	}
 
 }

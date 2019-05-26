@@ -23,6 +23,7 @@ public class UpdateUser extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
+		
 		try {				
 			Map<String,List<FileItem>> multiparts =	new ServletFileUpload(new DiskFileItemFactory()).parseParameterMap(request);
 			
@@ -52,16 +53,19 @@ public class UpdateUser extends HttpServlet {
 				}
 				
 			}
-		
 			
-			UserDAO uDao = new UserDAO();
-			if(uDao.alterar(user))
-				System.out.println("Atualizou");
+			User atual = (User) request.getSession().getAttribute("User");
 		
-			response.sendRedirect("login.jsp");
+			UserDAO uDao = new UserDAO();
+			uDao.alterar(user);
+			
+			if(atual.getId() == user.getId()) {
+				request.setAttribute("User", user);
+			}
+			response.sendRedirect("index.jsp");
 		}catch(Exception e){
 			System.out.println(e.getMessage());
-			request.getRequestDispatcher("cadastroCliente.jsp").forward(request, response);
+			request.getRequestDispatcher("produtos.jsp").forward(request, response);
 		 }
 	}
 }

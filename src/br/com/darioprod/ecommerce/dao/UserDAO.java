@@ -124,7 +124,7 @@ public class UserDAO implements IDAO{
 	public User findById(int id) {
 		Connection conn = null;
 		try {
-			String sql = "SELECT * from tbUsuario where id = ?";
+			String sql = "SELECT * from tbUsuario where idUsuario = ?";
 			conn = Conexao.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id);
@@ -182,6 +182,66 @@ public class UserDAO implements IDAO{
 		}
 		return null;
 	}
-
+	public List<User> listarClientes() {				
+		Connection conn = null;
+		try {			
+			String sql = "SELECT * FROM tbUsuario where nivelUsuario = 0 ORDER BY idUsuario ASC";	
+			conn = Conexao.getConnection();
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			ResultSet rs = pstm.executeQuery();
+			
+			List<User> users = new ArrayList<User>();
+			while(rs.next()) {
+				User user = new User();
+				user.setIdUser(rs.getInt("idUsuario"));
+				user.setLevelUser(rs.getInt("nivelUsuario"));
+				user.setNameUser(rs.getString("nomeUsuario"));
+				user.setEmailUser(rs.getString("emailUsuario"));
+				user.setPasswordUser(rs.getString("senhaUsuario"));
+				user.setCpfUser(rs.getString("cpfUsuario"));
+				user.setPhotoUser(rs.getString("fotoUsuario"));
+				
+				users.add(user);				
+			}			
+			return users;
+			
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}finally{
+			Conexao.fechar(conn);
+		}
+		return null;
+	}
+	
+	public List<User> listarADM() {				
+		Connection conn = null;
+		try {			
+			String sql = "SELECT * FROM tbUsuario where nivelUsuario = 1";	
+			conn = Conexao.getConnection();
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			ResultSet rs = pstm.executeQuery();
+			
+			List<User> users = new ArrayList<User>();
+			while(rs.next()) {
+				User user = new User();
+				user.setIdUser(rs.getInt("idUsuario"));
+				user.setLevelUser(rs.getInt("nivelUsuario"));
+				user.setNameUser(rs.getString("nomeUsuario"));
+				user.setEmailUser(rs.getString("emailUsuario"));
+				user.setPasswordUser(rs.getString("senhaUsuario"));
+				user.setCpfUser(rs.getString("cpfUsuario"));
+				user.setPhotoUser(rs.getString("fotoUsuario"));
+				
+				users.add(user);				
+			}			
+			return users;
+			
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}finally{
+			Conexao.fechar(conn);
+		}
+		return null;
+	}
 }
 
