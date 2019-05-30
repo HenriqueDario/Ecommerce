@@ -14,8 +14,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">    	
            
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>  
-          
+        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>            
+        <script type="text/javascript" src="js/AdmManagement.js"></script>
         <title> Lojinha Show </title>
     </head>
     <body>
@@ -25,14 +25,16 @@
          	<div class="titulo">
          		Gestão de ADMs
          	</div>
-         	<div class="searchProduct">
+         	<form action="admSearch" name="formAdmSearch" id="formAdmSearch" method="GET" class="searchProduct">
          		<input type="text" id="txtSearch" name="txtSearch" placeholder="Pesquisar nome...">
-    			<input type="button" id="btnSearch" name="btnSearch" value="Pesquisar">
-    		</div>
+    			<input type="button" id="btnSearch" name="btnSearch" value="Pesquisar" onclick="enviarPesquisa()">
+    		</form>
+    		<a href="cadastroADM.jsp"><input type="button" class="btnNovoProduto" id="btnNovoAdm" name="btnNovoAdm"  value="Adicionar Administrador"></a>
+         	
          	<table class="gerenciarProduto">
          		<tr>
          			<th>
-         				Id ADM
+         				ID
          			</th>
          			<th>
          				Nome do administrador

@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="css/estilo.css"/>  
           
+        <script type="text/javascript" src="js/peopleManagement.js"></script>
         <title> Lojinha Show </title>
     </head>
     <body>
@@ -24,14 +25,16 @@
          	<div class="titulo">
          		Gestão de Clientes
          	</div>
-         	<div class="searchProduct">
+         	<form action="peopleSearch" name="formPeopleSearch" id="formPeopleSearch" method="GET" class="searchProduct">
          		<input type="text" id="txtSearch" name="txtSearch" placeholder="Pesquisar nome...">
-    			<input type="button" id="btnSearch" name="btnSearch" value="Pesquisar">
-    		</div>
+    			<input type="button" id="btnSearch" name="btnSearch" value="Pesquisar" onclick="enviarPesquisa()">
+    		</form>
+    		<a href="cadastroCliente.jsp"><input type="button" class="btnNovoProduto" id="btnNovoCliente" name="btnNovoCliente"  value="Adicionar Cliente"></a>
+         	
          	<table class="gerenciarProduto">
          		<tr>
          			<th>
-         				Id Cliente
+         				ID
          			</th>
          			<th>
          				Nome do Cliente

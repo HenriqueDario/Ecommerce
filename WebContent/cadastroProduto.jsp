@@ -36,7 +36,7 @@
                 		<input type="text" id="nome" name="nome" class="txtNome" placeholder="Nome do produto"><br>
                 	</td>
                     <td>
-                        <input type="text" id="valor" name="valor" class="txtValor" placeholder="Valor do produto"><br>
+                        <input type="number" min="1" step="any" id="valor" name="valor" class="txtValor" placeholder="Valor do produto"><br>
                     </td>
                 </tr>
                 <tr>

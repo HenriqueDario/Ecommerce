@@ -23,6 +23,7 @@ public class RegisterUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		User user = new User();
 			try {				
 				Map<String,List<FileItem>> multiparts =	new ServletFileUpload(new DiskFileItemFactory()).parseParameterMap(request);
@@ -56,8 +57,10 @@ public class RegisterUser extends HttpServlet {
 				UserDAO uDao = new UserDAO();
 				if(uDao.cadastrar(user))
 					System.out.println("FOI");
-			
-				response.sendRedirect("login.jsp");
+				if(user.getLevelUser() == 0)
+					response.sendRedirect("login.jsp");
+				else
+					response.sendRedirect("areaADM.jsp");
 			}catch(Exception e){
 				System.out.println(e.getMessage());
 				request.getRequestDispatcher("cadastroCliente.jsp").forward(request, response);

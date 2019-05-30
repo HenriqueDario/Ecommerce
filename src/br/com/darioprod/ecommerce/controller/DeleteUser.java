@@ -20,7 +20,7 @@ public class DeleteUser extends HttpServlet {
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("idUser"));
-		
+		request.setCharacterEncoding("UTF-8");
 		UserDAO uDao = new UserDAO();
 		User user = uDao.findById(id);
 		
@@ -28,7 +28,7 @@ public class DeleteUser extends HttpServlet {
 		
 		try {
 			if(atual.getId() == id)
-				request.getSession().invalidate();
+				request.getSession().removeAttribute("User");
 			
 			if(uDao.remover(user))
 				response.sendRedirect("login.jsp");

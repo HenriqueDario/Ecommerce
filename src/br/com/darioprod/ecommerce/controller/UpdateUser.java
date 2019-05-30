@@ -23,7 +23,7 @@ public class UpdateUser extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
-		
+		request.setCharacterEncoding("UTF-8");
 		try {				
 			Map<String,List<FileItem>> multiparts =	new ServletFileUpload(new DiskFileItemFactory()).parseParameterMap(request);
 			
@@ -60,6 +60,7 @@ public class UpdateUser extends HttpServlet {
 			uDao.alterar(user);
 			
 			if(atual.getId() == user.getId()) {
+				request.removeAttribute("User");
 				request.setAttribute("User", user);
 			}
 			response.sendRedirect("index.jsp");

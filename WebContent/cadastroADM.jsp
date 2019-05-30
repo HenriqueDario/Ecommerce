@@ -15,9 +15,9 @@
     	<img src="images/bg.jpg" class="imagem-principal"/>
         <%@ include file = "nav.jsp" %>
         
-        <h1 class="titulo"> Crie sua conta </h1>
+        <h1 class="titulo"> Cadastro de ADM </h1>
  		<form action="cadastrar" id="formCadastro" method="POST" enctype="multipart/form-data" class="formularioCadastroCliente">
-        	<input type="hidden" id="levelUser" name="levelUser" value="0"/>
+        	<input type="hidden" id="levelUser" name="levelUser" value="1"/>
             <table class="campos-cadastro">
             	<tr>
                 	<th>

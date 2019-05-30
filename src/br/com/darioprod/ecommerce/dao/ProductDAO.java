@@ -31,7 +31,8 @@ public class ProductDAO implements IDAO{
 			
 			return true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
+			
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -51,7 +52,7 @@ public class ProductDAO implements IDAO{
 			
 			return true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -62,9 +63,8 @@ public class ProductDAO implements IDAO{
 	@Override
 	public boolean alterar(IDominio obj) {
 		Product prod = (Product) obj;
-		String sql = "UPDATE tbProduto SET"
-				+ "nomeProduto = ?,precoProduto = ?,descricaoProduto = ?,fotoProduto = ?"
-				+ "WHERE idProduto = ?";
+		String sql = "UPDATE tbProduto SET nomeProduto = ?,precoProduto = ?,descricaoProduto = ?,"
+				+ "fotoProduto = ? WHERE idProduto = ?";
 				
 		
 		Connection conn = null;
@@ -81,7 +81,7 @@ public class ProductDAO implements IDAO{
 			
 			return true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -91,7 +91,7 @@ public class ProductDAO implements IDAO{
 	public Product findById(int id) {
 		Connection conn = null;
 		try {
-			String sql = "SELECT * from tbProduct where idProduto = ?";
+			String sql = "SELECT * from tbProduto where idProduto = ?";
 			conn = Conexao.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id);
@@ -108,23 +108,23 @@ public class ProductDAO implements IDAO{
 				return prod;				
 			}
 		}catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
 		return null;
 	}
 
-	public List<IDominio> findByName(String name) {
+	public List<Product> findByName(String name) {
 		Connection conn = null;
 		try {
-			String sql = "SELECT * from tbProduct where nomeProduto = %?%";
+			String sql = "SELECT * from tbProduto where nomeProduto like ?";
 			conn = Conexao.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(sql);
-			pstm.setString(1, name);
+			pstm.setString(1, "%"+name+"%");
 			ResultSet rs = pstm.executeQuery();
 
-			List<IDominio> products = new ArrayList<IDominio>();
+			List<Product> products = new ArrayList<Product>();
 			
 			while(rs.next()) {
 				Product prod = new Product();
@@ -138,7 +138,7 @@ public class ProductDAO implements IDAO{
 			}
 			return products;
 		}catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -149,7 +149,7 @@ public class ProductDAO implements IDAO{
 	public List<IDominio> listar() {
 		Connection conn = null;
 		try {
-			String sql = "SELECT * from tbProduto";
+			String sql = "SELECT * from tbProduto ORDER BY idProduto ASC";
 			conn = Conexao.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
@@ -168,7 +168,7 @@ public class ProductDAO implements IDAO{
 			}
 			return products;
 		}catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -197,7 +197,7 @@ public class ProductDAO implements IDAO{
 			}
 			return products;
 		}catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}

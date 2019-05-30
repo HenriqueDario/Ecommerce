@@ -14,32 +14,43 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">    	
            
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>  
-          
+        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>            
+        <script type="text/javascript" src="js/productManagement.js"></script>
         <title> Lojinha Show </title>
     </head>
     <body>
         <img src="images/bg.jpg" class="imagem-principal"/>
         <%@ include file = "nav.jsp" %>
-        <div class="containerProducts">
+      	
          	<div class="titulo">
          		Produtos
          	</div>  
+         	
+         	<form action="productSearchOpen" method="GET" class="searchProduct" name="searchProduct" id="searchProduct">
+         		<input type="text" id="txtSearch" name="txtSearch" placeholder="Pesquisar nome...">
+    			<input type="button" id="btnSearch" name="btnSearch" value="Pesquisar" onclick="enviarPesquisa()">
+    		</form>
+         	<br><br><br>
+         	<div class="containerProducts">
 	         <c:forEach var="product" items="${listProducts}"> 
 	         	<div class="produto">
 	        		<img src="${product.photoProduct}" class="produto-image"/>
+	        		
+	        		<a href="#"><img src="images/carrinho.png" class="addToCart"></a>  
 			        <div class="produto-titulo">
 	        			${product.nameProduct}	
 	        		</div>
+	        		
 	        		<div class="produto-preco">
 	        			R$: <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.priceProduct}"/> 
 	        			
-	        		</div>
+	        		</div>	        		
 	        		<div class="produto-descricao">
-	        			${product.describeProduct}
-	        		</div>
-	        		
-	        	</div>         		
+	        			${product.describeProduct}	        			
+	        		</div>	         		  		
+	        	</div>    
+	        	
+	        			
 	         </c:forEach>	
 		</div>	           
            

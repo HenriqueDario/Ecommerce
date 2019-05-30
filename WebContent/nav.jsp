@@ -2,7 +2,7 @@
 <% User user = (User) session.getAttribute("User"); %>
 <nav>           
 	<ul class="menu">
-		<li><a href="shoppingCart.html"> <img src="images/shoppingCart.png" class="menuimg">   </a> </li>                              
+		<li><a href="shoppingCart.jsp"> <img src="images/shoppingCart.png" class="menuimg">   </a> </li>                              
 		<%if(user != null){
 			if(user.getLevelUser() < 1){
 		%>		

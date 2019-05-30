@@ -18,11 +18,11 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import br.com.darioprod.ecommerce.dao.ProductDAO;
 import br.com.darioprod.ecommerce.model.Product;
 
-@WebServlet(urlPatterns = {"/cadastrarProduto"})
-public class RegisterProduct extends HttpServlet{
+@WebServlet("/editarProduto")
+public class UpdateProduct extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
-
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
@@ -37,6 +37,8 @@ public class RegisterProduct extends HttpServlet{
 						if(item.isFormField()){
 							if(item.getFieldName().equals("nome")) {
 								prod.setNameProduct(item.getString());
+							}else if(item.getFieldName().equals("idProduct")){
+								prod.setIdProduct(Integer.parseInt(item.getString()));
 							}else if(item.getFieldName().equals("valor")){
 								prod.setPriceProduct(Double.parseDouble(item.getString()));
 							}else if(item.getFieldName().equals("descricaoProduto")){
@@ -53,19 +55,18 @@ public class RegisterProduct extends HttpServlet{
 					
 				}
 			
-
 				ProductDAO pDao = new ProductDAO();
-				if(pDao.cadastrar(prod))
+				if(pDao.alterar(prod))
 					System.out.println("FOI");
-
+				
 				resp.sendRedirect("areaADM.jsp");
 				
 			}catch(Exception e){
-				System.out.println(e.getMessage());	
-				resp.sendRedirect("cadastroProduto.jsp");
+				e.printStackTrace();
+				req.getRequestDispatcher("areaADM.jsp").forward(req, resp);
 			}
 		}
 	}
-		
-}
+	
 
+}

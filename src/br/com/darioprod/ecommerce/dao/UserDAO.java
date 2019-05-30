@@ -34,7 +34,7 @@ public class UserDAO implements IDAO{
 			
 			return true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -54,7 +54,7 @@ public class UserDAO implements IDAO{
 			
 			return true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -83,7 +83,7 @@ public class UserDAO implements IDAO{
 			
 			return true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -114,7 +114,7 @@ public class UserDAO implements IDAO{
 				return user;
 			}
 		}catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -144,7 +144,7 @@ public class UserDAO implements IDAO{
 				
 			}
 		}catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -176,7 +176,7 @@ public class UserDAO implements IDAO{
 			return users;
 			
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -206,7 +206,7 @@ public class UserDAO implements IDAO{
 			return users;
 			
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
@@ -216,7 +216,7 @@ public class UserDAO implements IDAO{
 	public List<User> listarADM() {				
 		Connection conn = null;
 		try {			
-			String sql = "SELECT * FROM tbUsuario where nivelUsuario = 1";	
+			String sql = "SELECT * FROM tbUsuario where nivelUsuario = 1 ORDER BY idUsuario ASC";	
 			conn = Conexao.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
@@ -237,11 +237,83 @@ public class UserDAO implements IDAO{
 			return users;
 			
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally{
 			Conexao.fechar(conn);
 		}
 		return null;
 	}
+	
+	public List<User> buscarADM(String name) {				
+		Connection conn = null;
+		try {			
+			String sql = "SELECT * FROM tbUsuario where nivelUsuario = 1 AND nomeUsuario like ? ORDER BY idUsuario ASC";	
+			conn = Conexao.getConnection();
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, "%"+name+"%");
+			ResultSet rs = pstm.executeQuery();
+			
+			List<User> users = new ArrayList<User>();
+			while(rs.next()) {
+				User user = new User();
+				user.setIdUser(rs.getInt("idUsuario"));
+				user.setLevelUser(rs.getInt("nivelUsuario"));
+				user.setNameUser(rs.getString("nomeUsuario"));
+				user.setEmailUser(rs.getString("emailUsuario"));
+				user.setPasswordUser(rs.getString("senhaUsuario"));
+				user.setCpfUser(rs.getString("cpfUsuario"));
+				user.setPhotoUser(rs.getString("fotoUsuario"));
+				
+				users.add(user);				
+			}			
+			return users;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			Conexao.fechar(conn);
+		}
+		return null;
+	}
+	
+	public List<User> buscarClientes(String name) {				
+		Connection conn = null;
+		try {			
+			String sql = "SELECT * FROM tbUsuario where nivelUsuario = 0 AND nomeUsuario like ? ORDER BY idUsuario ASC";	
+			conn = Conexao.getConnection();
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, "%"+name+"%");
+			ResultSet rs = pstm.executeQuery();
+			
+			List<User> users = new ArrayList<User>();
+			while(rs.next()) {
+				User user = new User();
+				user.setIdUser(rs.getInt("idUsuario"));
+				user.setLevelUser(rs.getInt("nivelUsuario"));
+				user.setNameUser(rs.getString("nomeUsuario"));
+				user.setEmailUser(rs.getString("emailUsuario"));
+				user.setPasswordUser(rs.getString("senhaUsuario"));
+				user.setCpfUser(rs.getString("cpfUsuario"));
+				user.setPhotoUser(rs.getString("fotoUsuario"));
+				
+				users.add(user);				
+			}			
+			return users;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			Conexao.fechar(conn);
+		}
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

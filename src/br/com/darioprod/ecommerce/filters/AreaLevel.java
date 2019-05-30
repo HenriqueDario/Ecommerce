@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.darioprod.ecommerce.model.User;
 
 @WebFilter(urlPatterns = {"/cadastroProduto.jsp","/cadastroProduto", "/areaADM.jsp","/gerenciarProdutos", "/gerenciarProdutos.jsp",
-		"/gerenciarPessoas","/gerenciarADM", "/editarDados.jsp", "/excluirConta.jsp"})
+		"/gerenciarPessoas","/gerenciarADM", "/editarDados.jsp", "/excluirConta.jsp", "/cadastroADM.jsp", "/productSearch"})
 public class AreaLevel implements Filter{
 
 	@Override
