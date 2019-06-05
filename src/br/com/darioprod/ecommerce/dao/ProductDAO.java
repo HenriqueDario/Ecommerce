@@ -203,4 +203,43 @@ public class ProductDAO implements IDAO{
 		}
 		return null;
 	}
+
+	public List<Product> searchBetweenPrices(double min, double max) {
+		Connection conn = null;
+		try {
+			String sql = "SELECT * from tbProduto where precoProduto between ? and ? ORDER BY idProduto ASC";
+			conn = Conexao.getConnection();
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setDouble(1, min);
+			pstm.setDouble(2, max);
+			
+			ResultSet rs = pstm.executeQuery();
+
+			List<Product> products = new ArrayList<Product>();
+			
+			while(rs.next()) {
+				Product prod = new Product();
+				prod.setIdProduct(rs.getInt("idProduto"));
+				prod.setNameProduct(rs.getString("nomeProduto"));
+				prod.setPriceProduct(rs.getDouble("precoProduto"));
+				prod.setDescribeProduct(rs.getString("descricaoProduto"));
+				prod.setPhotoProduct(rs.getString("fotoProduto"));			
+
+				products.add(prod);				
+			}
+			return products;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			Conexao.fechar(conn);
+		}
+		return null;
+	}
+	
+	
+	
 }
+
+
+
+

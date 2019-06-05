@@ -48,7 +48,7 @@
                     </td>                    	
                 </tr>                    
 			</table>                    
-                <input type="file" name="photoProduct" class="pegar-imagem">
+                <input type="file" name="photoProduct" class="pegar-imagem" accept="imagem/*">
                 <input type="submit" value="Cadastrar" class="btn-enviar">
                
 		</form>            

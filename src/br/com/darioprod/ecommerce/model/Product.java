@@ -52,5 +52,10 @@ public class Product implements IDominio{
 	public void setDescribeProduct(String describeProduct) {
 		this.describeProduct = describeProduct;
 	}
+	
+	@Override
+	public String toString() {
+		return idProduct +";"+ nameProduct+";"+ priceProduct+";"+photoProduct	+";"+describeProduct;
+	}
 
 }
