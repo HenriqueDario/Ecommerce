@@ -49,8 +49,9 @@
 				</tr>
 		 	<c:forEach var="product" items="${ShoppingCart}"> 
 		 		<tr>
-		     		<td>		     		
+		     		<td>	     		
 		 				${product.nameProduct}
+		 				<input type="hidden" id="idProduct" name="idProduct" value="${product.idProduct}">	
 		     		</td>	         		
 		 			<td>
 		 				R$: <fmt:formatNumber type = "number" maxFractionDigits = "3"  value = "${product.priceProduct}"/>
@@ -62,7 +63,7 @@
 		 				<img src="${product.photoProduct}"/>
 		     		</td>
 		 			<td>		 				
-			         	<input type="number" min="1" step="1" id="quantity" name="quantity" value="${product.quantityShoppingCart}">		
+			         	<input type="number" min="1" step="1" id="quantity" name="quantity" value="${product.quantityShoppingCart}" onblur="atualizar();">		
 			         	<input type="hidden" id="quan" name="idProduct" value="${product.idProduct}">	
 		 				<input type="button" class="atualizarProd" id="atualizarProd" name="atualizarProd" value="Atualizar" onclick="atualizar()">	
 		 			</td>
@@ -94,8 +95,11 @@
 		 <td style="border: none !important;"></td>
 		 <td style="border: none !important;"></td>
 		 <td id="linhaCompra">
-		 	<form action="finalizarCompra" method="post">
-		 		<input type="submit" class="btnFinalizarCompra" id="finalizarCompra" name="finalizarCompra" value="Finalizar Compra">		
+		 	<form action="finalizarCompra" id="formFinalizar" name="formFinalizar" method="post">
+		 		<input type="hidden" id="quantidades" name="quantidades" value="">
+		 		<input type="hidden" id="idProdutoo" name="idProdutoo" value="">
+		 		<input type="button" class="btnFinalizarCompra" id="btnFinalizarCompra" name="btnFinalizarCompra" value="Finalizar Compra" onclick="clickFinalizarCompra()">					
+ 		
 		 	</form>
 		 </td>
 		</tr>		

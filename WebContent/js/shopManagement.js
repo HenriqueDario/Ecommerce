@@ -13,9 +13,6 @@ function calcularTotal(){
 		quantity = table.rows[i].cells[4].querySelector('input').value;
 		
 		totalValue = totalValue + (price * quantity);			
-		
-		
-		
 	}
 	document.getElementById("total").innerHTML ="Total: R$ "+ totalValue;	
 }
@@ -23,4 +20,23 @@ function calcularTotal(){
 
 function atualizar(campo){
 	calcularTotal();
+}
+
+function clickFinalizarCompra(){
+	var total = document.getElementById("total").innerHTML;
+	var table = document.getElementById("produtosComprados");
+	var quantity="", idProduct="";
+	for(var i = 1; i < table.rows.length-2; i++){	
+		idProduct= idProduct+";"+ table.rows[i].cells[0].querySelector('input').value;
+		quantity = quantity+";"+ table.rows[i].cells[4].querySelector('input').value;			
+	}
+	document.getElementById("idProdutoo").value = idProduct;
+	document.getElementById("quantidades").value = quantity;
+
+	
+	if(total.trim().split("R$ ")[1] != "0"){
+		document.getElementById('formFinalizar').submit();
+	}else{
+		alert('Seu carrinho está vázio, adicione algum produto para finalizar a compra')
+	}
 }
