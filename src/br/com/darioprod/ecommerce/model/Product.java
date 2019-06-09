@@ -6,7 +6,7 @@ public class Product implements IDominio{
 	private Double priceProduct;
 	private String describeProduct;
 	private String photoProduct;
-	
+	private int quantityShoppingCart = 1;
 	
 	public String getNameProduct() {
 		return nameProduct;
@@ -52,10 +52,14 @@ public class Product implements IDominio{
 	public void setDescribeProduct(String describeProduct) {
 		this.describeProduct = describeProduct;
 	}
-	
-	@Override
-	public String toString() {
-		return idProduct +";"+ nameProduct+";"+ priceProduct+";"+photoProduct	+";"+describeProduct;
+
+
+	public int getQuantityShoppingCart() {
+		return quantityShoppingCart;
+	}
+
+	public void setQuantityShoppingCart(int quantityShoppingCart) {
+		this.quantityShoppingCart = quantityShoppingCart;
 	}
 
 }

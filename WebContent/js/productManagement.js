@@ -25,5 +25,17 @@ function enviarFiltro(){
 		}
 	}else{
 		alert("Insira valores para a busca");
-	}
+	}	
 }
+
+
+
+
+
+
+
+
+
+
+
+

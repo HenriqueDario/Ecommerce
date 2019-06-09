@@ -62,7 +62,7 @@
 					
 					<img src="${product.photoProduct}" class="produto-image" />
 					 
-					 <input type="image" src="images/carrinho.png" class="addToCart" alt="Submit">
+					 <input type="image" src="images/carrinho.png" class="addToCart" alt="Submit" onclick="adicionarProduto()">
 					 
 					<div class="produto-titulo">${product.nameProduct}</div>
 
