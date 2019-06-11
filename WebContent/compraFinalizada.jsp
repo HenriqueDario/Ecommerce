@@ -60,7 +60,7 @@
 		 		</tr> 	
 		 </c:forEach>	
 	</table>
-	<a href="index.jsp"> <input type="button" value="Voltar" class="btnVoltar"></a>
+		<a href="index.jsp"> <input type="button" value="Voltar" class="btnVoltar"></a>
         <footer>
             &copy; Tudo nosso - 2019    
         </footer>

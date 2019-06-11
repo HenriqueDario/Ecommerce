@@ -16,11 +16,32 @@ create table tbUsuario(
 	fotoUsuario varchar(300)
 );
 
+create table tbVenda(
+	idVenda serial PRIMARY KEY,
+	dataVenda varchar(20) not null,
+	idCliente integer references tbUsuario (idUsuario) not null
+);
+
+create table tbItensVenda(
+	idItensVenda serial PRIMARY KEY,	
+	idProduto integer references tbProduto (idProduto) not null,
+	idVenda integer references tbVenda (idVenda)not null,	
+	quantidade integer not null
+);
+	
+
 drop table tbProduto
 drop table tbUsuario
+drop table tbVenda
+drop table tbItensVenda
 
 select * from tbUsuario
 select * from tbProduto
+select * from tbVenda
+select * from tbItensVenda
+
+
+
 
 insert into tbUsuario (nomeusuario,cpfusuario,emailusuario,senhausuario,nivelusuario)
 values ('adm','25530066985','adm','adm',1)
