@@ -8,6 +8,8 @@
 	<field name="nomeProduto" class="java.lang.String"/>
 	<field name="quantidadeTotal" class="java.lang.Integer"/>
 	<field name="valorTotal" class="java.lang.Double"/>
+	<field name="inicio" class="java.lang.LocalDate"/>
+	<field name="fim" class="java.lang.LocalDate"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -20,7 +22,8 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="86" splitType="Stretch">
+		<band height="129" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
 				<reportElement x="0" y="0" width="555" height="56" uuid="b278b867-b4f1-4590-88d3-61a776bf7389"/>
 				<textElement textAlignment="Center">
@@ -29,11 +32,43 @@
 				<text><![CDATA[Relatório]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="196" y="56" width="163" height="30" uuid="c38526fc-34bc-4ef5-972e-8c3d02cdd9c3"/>
+				<reportElement x="196" y="56" width="184" height="30" uuid="c38526fc-34bc-4ef5-972e-8c3d02cdd9c3"/>
 				<textElement>
 					<font size="14.5"/>
 				</textElement>
-				<text><![CDATA[Produto mais vendido]]></text>
+				<text><![CDATA[Produto menos vendido]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="90" width="150" height="30" uuid="c77d2000-592b-4f48-ac14-501fe0f38786">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="90" width="150" height="30" uuid="fd5d3479-11f4-4112-9117-b2e945d32efb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="90" width="60" height="30" uuid="26334976-5bea-4f34-afca-6a01b1ce5200"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[De:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="90" width="60" height="30" uuid="5321b753-06c8-4c5f-b60c-99926c09df92"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Até:]]></text>
 			</staticText>
 		</band>
 	</pageHeader>

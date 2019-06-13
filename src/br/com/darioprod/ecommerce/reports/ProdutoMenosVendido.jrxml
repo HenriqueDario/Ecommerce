@@ -29,11 +29,11 @@
 				<text><![CDATA[Relatório]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="196" y="56" width="163" height="30" uuid="c38526fc-34bc-4ef5-972e-8c3d02cdd9c3"/>
+				<reportElement x="190" y="56" width="175" height="30" uuid="c38526fc-34bc-4ef5-972e-8c3d02cdd9c3"/>
 				<textElement>
 					<font size="14.5"/>
 				</textElement>
-				<text><![CDATA[Produto mais vendido]]></text>
+				<text><![CDATA[Produto menos vendido]]></text>
 			</staticText>
 		</band>
 	</pageHeader>

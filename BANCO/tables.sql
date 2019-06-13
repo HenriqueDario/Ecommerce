@@ -31,37 +31,41 @@ create table tbItensVenda(
 );
 	
 /* pegar produto mais vendido entre datas */
-select idProduto, sum(quantidade) as total from tbItensVenda as iv
+select p.nomeProduto as Nome_Produto, sum(quantidade) as quantidade_total, sum(quantidade * p.precoProduto) as valor_total from tbItensVenda as iv
 inner join tbVenda as v ON iv.idVenda = v.idVenda
+inner join tbProduto as p ON p.idProduto = iv.idProduto
 where v.dataVenda >= '2019-06-10' and v.dataVenda <'2019-06-15'
-group by idProduto order by total DESC LIMIT 1
+group by p.nomeProduto order by quantidade_total DESC LIMIT 1
 
 /* pegar produto mais vendido */
-select idProduto, sum(quantidade) as total from tbItensVenda as iv
+select p.nomeProduto as Nome_Produto, sum(quantidade) as quantidade_total, sum(quantidade * p.precoProduto) as valor_total from tbItensVenda as iv
 inner join tbVenda as v ON iv.idVenda = v.idVenda
-group by idProduto order by total DESC LIMIT 1
+inner join tbProduto as p ON p.idProduto = iv.idProduto
+group by p.nomeProduto order by quantidade_total DESC LIMIT 1
 
 
 
 /* pegar produto menos vendido entre datas  */
-select idProduto, sum(quantidade) as total from tbItensVenda as iv
+select p.nomeProduto as Nome_Produto, sum(quantidade) as quantidade_total, sum(quantidade * p.precoProduto) as valor_total from tbItensVenda as iv
 inner join tbVenda as v ON iv.idVenda = v.idVenda
+inner join tbProduto as p ON p.idProduto = iv.idProduto
 where v.dataVenda >= '2019-06-10' and v.dataVenda <'2019-06-15'
-group by idProduto order by total ASC LIMIT 1
+group by p.nomeProduto order by quantidade_total ASC LIMIT 1
 
-/* pegar produto menos vendido entre datas  */
-select idProduto, sum(quantidade) as total from tbItensVenda as iv
+/* pegar produto menos vendido*/
+select p.nomeProduto as Nome_Produto, sum(quantidade) as quantidade_total, sum(quantidade * p.precoProduto) as valor_total from tbItensVenda as iv
 inner join tbVenda as v ON iv.idVenda = v.idVenda
-group by idProduto order by total ASC LIMIT 1
+inner join tbProduto as p ON p.idProduto = iv.idProduto
+group by p.nomeProduto order by quantidade_total ASC LIMIT 1
 
 
 
 /* lucro bruto entre datas */
-select sum(valorTotal) from tbVenda
-where dataVenda >= '2019-06-10' and dataVenda <'2019-06-15'
+select sum(valorTotal) as valor_total from tbVenda
+where dataVenda >= '2019-06-10' and dataVenda <='2019-06-12'
 
 /* lucro bruto desde sempre */
-select sum(valorTotal) from tbVenda
+select sum(valorTotal) valor_total from tbVenda
 
 
 

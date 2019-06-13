@@ -639,6 +639,47 @@ th {
 	margin-right: 7.5%;
 }
 
+.cmbRelatorio{
+	positon:relative;
+	width:18%;
+	margin: 10% auto 5% auto;
+}
+.btnGerar{	
+	positon:relative;
+	width:15%;
+	margin: 8% auto 2% 1%;
+	height: 2em !important;
+	background-color: rgb(255, 165, 0);
+	color: white;
+	font-size: 22px !important;	
+}
+.formRelatorio{
+	positon:relative;
+	width:100%;
+	margin: 0 auto 0 42% !important;
+}
+
+.formRelatorio #optRelatorio{
+	positon:relative;
+	margin-top:1% !important;
+	margin-left: 2%;
+}
+formRelatorio #optRelatorioData{	
+	margin-left: 2% !important;
+}
+
+.formRelatorio #dataInicio{
+	position:relative;
+	left: -10% !important;
+}
+.dataInicio{
+	position:relative;
+	left: -10% !important;
+}
+.formRelatorio #dataFim{
+	position:relative;
+	left: -10% !important;
+}
 
 .gerenciarProduto #quantity{
 	width: 3em;

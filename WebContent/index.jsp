@@ -14,7 +14,6 @@
         <img src="images/bg.jpg" class="imagem-principal"/>
         <%@ include file = "nav.jsp" %>
         
-        
 
         <footer>
             &copy; Tudo nosso - 2019    

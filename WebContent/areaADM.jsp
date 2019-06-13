@@ -36,7 +36,13 @@
                 	<a href="gerenciarADM">Gestão de ADMs</a>
                     <br><br>
             	</td>
-            </tr>            
+            </tr>     
+            <tr>
+                <td> 
+                	<a href="relatorios.jsp">Relatórios</a>
+                    <br><br>
+            	</td>
+            </tr>          
             <tr>
                 <td> 
                 	<a href="editarDadosAtuais.jsp">Alterar dados cadastrados</a>
@@ -48,7 +54,8 @@
                 	<a href="excluirContaAtual.jsp">Excluir conta</a>
                     <br><br>
             	</td>
-            </tr>            
+            </tr> 
+                     
 		</table>     
            
 
