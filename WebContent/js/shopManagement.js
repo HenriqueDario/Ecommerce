@@ -7,7 +7,7 @@ function calcularTotal(){
 	for(var i = 1; i < table.rows.length-2; i++){
 		price = table.rows[i].cells[1].innerHTML;		
 		var array = String(price).trim().split("R$: ");
-		array = array[1].replace(",",".");
+		array = array[1].replace(".","").replace(",",".");
 		price = parseFloat(array);		
 		
 		quantity = table.rows[i].cells[4].querySelector('input').value;

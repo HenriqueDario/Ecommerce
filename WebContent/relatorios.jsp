@@ -13,7 +13,7 @@
         <title> Lojinha Show </title>
         
     </head>
-    <body onload="radioVisivel(); dateFieldVisivel();">
+    <body>
         <img src="images/bg.jpg" class="imagem-principal"/>
         <%@ include file = "nav.jsp" %>
         <h1 class="titulo">Relatórios</h1>
@@ -25,12 +25,12 @@
 	        	<option> Lucro Bruto </option>       
 	        </select>
 	        <br>
-	        <div id="RadioOptions">
+	        <div id="RadioOptions" style="visibility:hidden">
 		        <input type="radio" id="optRelatorio" name="optRelatorio" value="Tudo" checked="checked" onchange="dateFieldVisivel();"> Tudo
 				<input type="radio" id="optRelatorioData" name="optRelatorio" value="Entre datas" onchange="dateFieldVisivel();"> Entre datas		
 	        </div>
 	        <br><br><br>
-	        <div id="dateFields">
+	        <div id="dateFields" style="visibility:hidden">
 		        <label class="dataInicio">De:</label>
 		        <input type="text" id="dataInicio" name="dataInicio" placeholder="yyyy-MM-dd">
 		        <label class="dataInicio">Até:</label>
