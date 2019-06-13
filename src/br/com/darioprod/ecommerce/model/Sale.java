@@ -3,9 +3,10 @@ package br.com.darioprod.ecommerce.model;
 import java.util.Date;
 
 public class Sale {
-	int id;
-	Date saleDate;
-	int idClient;
+	private int id;
+	private Date saleDate;
+	private int idClient;
+	private double totalValue;
 	
 	public int getId() {
 		return id;
@@ -24,5 +25,11 @@ public class Sale {
 	}
 	public void setIdClient(int idClient) {
 		this.idClient = idClient;
+	}
+	public double getTotalValue() {
+		return totalValue;
+	}
+	public void setTotalValue(double totalValue) {
+		this.totalValue = totalValue;
 	}
 }

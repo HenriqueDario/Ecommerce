@@ -16,5 +16,13 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jstl-impl-1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/postgresql-42.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-beanutils-1.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-collections-3.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-digester-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/groovy-all-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/iText-2.1.7.js2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jasperreports-5.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jasperreports-fonts-5.6.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

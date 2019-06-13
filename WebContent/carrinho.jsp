@@ -98,6 +98,7 @@
 		 	<form action="finalizarCompra" id="formFinalizar" name="formFinalizar" method="post">
 		 		<input type="hidden" id="quantidades" name="quantidades" value="">
 		 		<input type="hidden" id="idProdutoo" name="idProdutoo" value="">
+		 		<input type="hidden" id="totalValuee" name="totalValuee" value="">		 		
 		 		<input type="button" class="btnFinalizarCompra" id="btnFinalizarCompra" name="btnFinalizarCompra" value="Finalizar Compra" onclick="clickFinalizarCompra()">					
  		
 		 	</form>

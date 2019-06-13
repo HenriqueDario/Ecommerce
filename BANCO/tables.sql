@@ -18,8 +18,9 @@ create table tbUsuario(
 
 create table tbVenda(
 	idVenda serial PRIMARY KEY,
-	dataVenda varchar(20) not null,
-	idCliente integer references tbUsuario (idUsuario) not null
+	dataVenda DATE DEFAULT CURRENT_DATE,
+	idCliente integer references tbUsuario (idUsuario) not null,	
+	valorTotal double precision not null
 );
 
 create table tbItensVenda(
@@ -29,21 +30,55 @@ create table tbItensVenda(
 	quantidade integer not null
 );
 	
+/* pegar produto mais vendido entre datas */
+select idProduto, sum(quantidade) as total from tbItensVenda as iv
+inner join tbVenda as v ON iv.idVenda = v.idVenda
+where v.dataVenda >= '2019-06-10' and v.dataVenda <'2019-06-15'
+group by idProduto order by total DESC LIMIT 1
 
-drop table tbProduto
-drop table tbUsuario
-drop table tbVenda
-drop table tbItensVenda
+/* pegar produto mais vendido */
+select idProduto, sum(quantidade) as total from tbItensVenda as iv
+inner join tbVenda as v ON iv.idVenda = v.idVenda
+group by idProduto order by total DESC LIMIT 1
+
+
+
+/* pegar produto menos vendido entre datas  */
+select idProduto, sum(quantidade) as total from tbItensVenda as iv
+inner join tbVenda as v ON iv.idVenda = v.idVenda
+where v.dataVenda >= '2019-06-10' and v.dataVenda <'2019-06-15'
+group by idProduto order by total ASC LIMIT 1
+
+/* pegar produto menos vendido entre datas  */
+select idProduto, sum(quantidade) as total from tbItensVenda as iv
+inner join tbVenda as v ON iv.idVenda = v.idVenda
+group by idProduto order by total ASC LIMIT 1
+
+
+
+/* lucro bruto entre datas */
+select sum(valorTotal) from tbVenda
+where dataVenda >= '2019-06-10' and dataVenda <'2019-06-15'
+
+/* lucro bruto desde sempre */
+select sum(valorTotal) from tbVenda
+
+
+
+
 
 select * from tbUsuario
 select * from tbProduto
 select * from tbVenda
 select * from tbItensVenda
 
-
-
-
 insert into tbUsuario (nomeusuario,cpfusuario,emailusuario,senhausuario,nivelusuario)
-values ('adm','25530066985','adm','adm',1)
+values ('adm','111.111.111-11','adm','adm',1)
+
+
+drop table tbProduto;
+drop table tbUsuario;
+drop table tbVenda;
+drop table tbItensVenda;
 	  
 	

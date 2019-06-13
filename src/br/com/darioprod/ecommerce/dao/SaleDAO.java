@@ -3,9 +3,7 @@ package br.com.darioprod.ecommerce.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import br.com.darioprod.ecommerce.model.Product;
 import br.com.darioprod.ecommerce.model.User;
@@ -13,19 +11,18 @@ import br.com.darioprod.ecommerce.model.User;
 
 public class SaleDAO{
 
-	public boolean cadastrar(User u) {
+	public boolean cadastrar(User u, double totalValue) {
 		String sql = "INSERT INTO tbVenda"
-				+ " (dataVenda,idCliente) "
+				+ " (idCliente, valorTotal) "
 				+ " VALUES (?,?) ";
 		
 		Connection conn = null;
 		try {			
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");		 
-		Date currentDate = new Date();		 			
+			 			
 			conn = Conexao.getConnection();		
 			PreparedStatement pstm = conn.prepareStatement(sql);
-			pstm.setString(1, formatter.format(currentDate));
-			pstm.setInt(2,u.getId());
+			pstm.setInt(1,u.getId());
+			pstm.setDouble(2, totalValue);
 			
 			pstm.execute();
 			
@@ -78,5 +75,6 @@ public class SaleDAO{
 		return 0;
 	}
 	
+
 
 }

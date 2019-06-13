@@ -55,3 +55,4 @@ src/br/com/darioprod/ecommerce/dao/Conexao.java
 .cache-main
 .scala_dependencies
 
+/build/

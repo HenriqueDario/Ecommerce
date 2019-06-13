@@ -29,6 +29,9 @@ public class FinalizarCompra extends HttpServlet {
 		    	ArrayList<Product> products = new ArrayList<Product>();
 		    	String ids = request.getParameter("idProdutoo");
 		    	String quantidades = request.getParameter("quantidades");
+		    	String valorTotal = request.getParameter("totalValuee");
+		    	double totalValue = Double.parseDouble(valorTotal);
+		    
 		    	int idProdutos[], quantidadeProdutos[];    	
 		    	
 		    	String aux1[] = ids.trim().split(";");
@@ -49,10 +52,9 @@ public class FinalizarCompra extends HttpServlet {
 		    	}   	
 		    	
 		    	SaleDAO sDao = new SaleDAO();
-		    	sDao.cadastrar(u);  	
+		    	sDao.cadastrar(u, totalValue);  	
 		    	
 		    	SaleItemsDAO sid = new SaleItemsDAO();		  
-		    	System.out.println(sDao.buscarUltimaVenda());
 				for(int i = 1; i < idProdutos.length; i++) {	
 		    		sid.registrarItensVenda(sDao.buscarUltimaVenda(), idProdutos[i], quantidadeProdutos[i]);
 				}

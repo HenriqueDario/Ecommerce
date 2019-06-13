@@ -14,7 +14,7 @@ function calcularTotal(){
 		
 		totalValue = totalValue + (price * quantity);			
 	}
-	document.getElementById("total").innerHTML ="Total: R$ "+ totalValue;	
+	document.getElementById("total").innerHTML ="Total: R$ "+ totalValue.toFixed(2);	
 }
 
 
@@ -32,6 +32,7 @@ function clickFinalizarCompra(){
 	}
 	document.getElementById("idProdutoo").value = idProduct;
 	document.getElementById("quantidades").value = quantity;
+	document.getElementById("totalValuee").value = parseFloat(total.trim().split("R$ ")[1]);
 
 	
 	if(total.trim().split("R$ ")[1] != "0"){
