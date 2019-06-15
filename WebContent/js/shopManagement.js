@@ -30,12 +30,13 @@ function clickFinalizarCompra(){
 		idProduct= idProduct+";"+ table.rows[i].cells[0].querySelector('input').value;
 		quantity = quantity+";"+ table.rows[i].cells[4].querySelector('input').value;			
 	}
-	document.getElementById("idProdutoo").value = idProduct;
-	document.getElementById("quantidades").value = quantity;
-	document.getElementById("totalValuee").value = parseFloat(total.trim().split("R$ ")[1]);
 
-	
-	if(total.trim().split("R$ ")[1] != "0"){
+	if(total.trim().split("R$ ")[1] != "0.00"){
+		document.getElementById("idProdutoo").value = idProduct;
+		document.getElementById("quantidades").value = quantity;
+		document.getElementById("totalValuee").value = parseFloat(total.trim().split("R$ ")[1]);
+		
+		
 		document.getElementById('formFinalizar').submit();
 	}else{
 		alert('Seu carrinho está vázio, adicione algum produto para finalizar a compra')
