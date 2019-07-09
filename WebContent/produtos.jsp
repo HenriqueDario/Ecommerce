@@ -34,41 +34,41 @@
 	<br>
 	<br>
 	<br>
-	
+
 	<div class="containerProducts">
 		<div class="left-select">
-				
-				
-				<form  class="filtroValor" action="valueFilter" id="valueFilter" name="valueFilter" method="get">
-					<br>
-					<label id="tituloFiltro">Filtros</label>
-					<br>
-					<label id="de">De:</label> <input type="number" id="minimo" name="minimo">
-					<br>
-					<label>Até:</label> <input type="number" id="maximo" name="maximo">
-				
-				
-					<input type="button" id="btnClean" name="btnClean" value="Limpar" onclick="limparCampos()">
-					<input type="button" id="btnFilter" name="btnFilter" value="Aplicar" onclick="enviarFiltro()">
-				
-				</form>
-				
-						
-		 </div>
+
+
+			<form class="filtroValor" action="valueFilter" id="valueFilter"
+				name="valueFilter" method="get">
+				<br> <label id="tituloFiltro">Filtros</label> <br> <label
+					id="de">De:</label> <input type="number" id="minimo" name="minimo">
+				<br> <label>Até:</label> <input type="number" id="maximo"
+					name="maximo"> <input type="button" id="btnClean"
+					name="btnClean" value="Limpar" onclick="limparCampos()"> <input
+					type="button" id="btnFilter" name="btnFilter" value="Aplicar"
+					onclick="enviarFiltro()">
+
+			</form>
+
+
+		</div>
 		<div class="products">
 			<c:forEach var="product" items="${listProducts}">
-				<form class="produto" action="adicionarProdutoAoCarrinho" method="POST">
-					<input type="hidden" id="idProduct" name="idProduct" value="${product.idProduct}">
-					
-					<img src="${product.photoProduct}" class="produto-image" />
-					 
-					 <input type="image" src="images/carrinho.png" class="addToCart" alt="Submit" onclick="adicionarProduto()">
-					 
+				<form class="produto" action="adicionarProdutoAoCarrinho"
+					method="POST">
+					<input type="hidden" id="idProduct" name="idProduct"
+						value="${product.idProduct}"> <img
+						src="${product.photoProduct}" class="produto-image" /> <input
+						type="image" src="images/carrinho.png" class="addToCart"
+						alt="Submit" onclick="adicionarProduto()">
+
 					<div class="produto-titulo">${product.nameProduct}</div>
 
 					<div class="produto-preco">
 						R$:
-						<fmt:formatNumber type="number" maxFractionDigits="3" value="${product.priceProduct}" />
+						<fmt:formatNumber type="number" maxFractionDigits="3"
+							value="${product.priceProduct}" />
 
 					</div>
 					<div class="produto-descricao">${product.describeProduct}</div>
@@ -78,7 +78,7 @@
 	</div>
 
 
-	<footer> &copy; Tudo nosso - 2019 </footer>
+	<footer> &copy; Henrique Dário - 2019 </footer>
 
 </body>
 

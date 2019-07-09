@@ -53,7 +53,7 @@ public class SaleDAO{
 	}
 	
 	public int buscarUltimaVenda() {
-		String sql = "select MAX (idVenda) as maximo from tbVenda";
+		String sql = "select max(idVenda) as maximo from tbVenda";
 		Connection conn = null;
 		try {				
 			

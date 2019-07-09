@@ -1,46 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-           
-        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>     
-        <title> Lojinha Show </title>
-    </head>
-    <body>
-       	<img src="images/bg.jpg" class="imagem-principal"/>
-        <%@ include file = "nav.jsp" %>
-        
-	    <div class="main-contato">     
-	            
-	            <img src="images/sac.png" class="logo-sac"/>
-	                    <form class="formulario">
-	                        <label class="label-contato"> Nome:</label>
-	                        <input type="text" name="nome" class="text-contato" ><br>
-	
-	                        <label class="label-contato"> Email:</label>
-	                        <input type="text" name="email" class="text-contato"><br>   
-	
-	                        <label class="label-contato"> Telefone:</label>
-	                        <input type="text" name="telefone" class="text-contato"><br> <br> 
-	
-	                        <label> Descrição do problema:</label><br>    
-	                        <textarea rows="4" cols="50">
-	                        </textarea>   
-	                        
-	                        <br>
-	                        <input type="submit" value="Enviar" class="btn-submit">
-	                    </form> 
-	                          
-	        </div>
+<head>
+<meta charset="utf-8" />
 
-			<footer>
-	        	&copy; Tudo nosso - 2019
-			</footer> 
-        
-    </body>
-    
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+<title>Lojinha Show</title>
+</head>
+<body>
+	<img src="images/bg.jpg" class="imagem-principal" />
+	<%@ include file="nav.jsp"%>
+
+	<div class="main-contato">
+<h1>Meios de contato e redes sociais</h1>
+
+<address>
+    <strong>
+	    E-mail:<a href="mailto:henrique.dariov@gmail.com" target="_blank"> henrique.dariov@gmail.com</a><br /><br />
+	    Github:<a href="https://github.com/HenriqueDario" target="_blank"> github.com/HenriqueDario</a><br /><br />
+	    Linkedin: <a href="https://www.linkedin.com/in/henrique-d%C3%A1rio-a2a9a0183/" target="_blank"> Henrique Dário</a><br /><br />
+	    Instagram: <a href="https://www.instagram.com/henrique.d5" target="_blank"> henrique.d5</a><br /><br />
+    </strong>
+
+</address>
+	</div>
+
+	<footer> &copy; Henrique Dário - 2019 </footer>
+
+</body>
+
 </html>
 

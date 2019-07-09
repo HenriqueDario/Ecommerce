@@ -57,7 +57,6 @@ public class Relatorio extends HttpServlet {
 			e.printStackTrace();
 			response.sendRedirect("areaADM.jsp");
 		}
-
 			response.sendRedirect("areaADM.jsp");
 	}
 

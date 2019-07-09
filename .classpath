@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jstl-api-1.2.jar"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_211(1)">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/commons-digester-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/groovy-all-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/iText-2.1.7.js2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/jasperreports-5.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/jasperreports-fonts-5.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/jstl-impl-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/henri/eclipse-workspace/Ecommerce/WebContent/WEB-INF/lib/postgresql-42.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.47-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_211">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5">
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5 (2)">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jstl-impl-1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/postgresql-42.2.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-beanutils-1.8.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-collections-3.2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-digester-2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/commons-logging-1.1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/groovy-all-2.0.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/iText-2.1.7.js2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jasperreports-5.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/henrique/Downloads/jasperreports-fonts-5.6.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
